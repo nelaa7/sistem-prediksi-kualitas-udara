@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>AQI AIR</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-icons.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+    <link href="static\css\templatemo-topic-listing.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    <div class="col-lg-8 col-12 mt-5 mx-auto">
+        <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
+            <div class="d-flex">
+                <!-- <img src="images/topics/undraw_Remote_design_team_re_urdx.png" class="custom-block-image img-fluid" alt="">-->
+
+                <div class="custom-block-topics-listing-info d-flex">
+                    <div>
+                        <h5 class="mb-2">Masukkan nilai polutan</h5>
+
+                       <!-- <p class="mb-0">Topic Listing includes home, listing, detail and contact pages. Feel free to
+                            modify this template for your custom websites.</p>-->
+
+                        <form class="row g-3" method="POST">
+                            <div class="col-md-12">
+                                <label for="inputpm10" class="form-label">PM10</label>
+                                <input type="number" class="form-control" id="inputpm10">
+                            </div>
+                            <div class="col-md-12">
+                                <label for="inputSO2" class="form-label">SO2</label>
+                                <input type="number" class="form-control" id="inputSO2">
+                            </div>
+                            <div class="col-12">
+                                <label for="inputCO" class="form-label">CO</label>
+                                <input type="number" class="form-control" id="inputCO" >
+                            </div>
+                            <div class="col-12">
+                                <label for="inputo3" class="form-label">O3</label>
+                                <input type="number" class="form-control" id="inputnumber">
+                            </div>
+                            <div class="col-12">
+                                <label for="inputno2" class="form-label">NO2</label>
+                                <input type="number" class="form-control" id="inputno2">
+                            </div>
+                            
+                            <div class="modal-dialog modal-dialog-centered" id="submit">
+                            <a href="topics-detail.html" class="btn custom-btn mt-3 mt-lg-4">Submit</a>
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <!--<span class="badge bg-design rounded-pill ms-auto">14</span>-->
+                </div>
+            </div>
+        </div>
+</body>
+
+
+
+
+
+
+<script >
+    const exampleModal = document.getElementById('submit')
+if (exampleModal) {
+    exampleModal.addEventListener('show.bs.modal', event => {
+        // Button that triggered the modal
+        const button = event.relatedTarget
+        // Extract info from data-bs-* attributes
+        const recipient = button.getAttribute('data-bs-whatever')
+        // If necessary, you could initiate an Ajax request here
+        // and then do the updating in a callback.
+
+        // Update the modal's content.
+        const modalTitle = exampleModal.querySelector('.modal-title')
+        const modalBodyInput = exampleModal.querySelector('.modal-body input')
+
+        modalTitle.textContent = `New message to ${recipient}`
+        modalBodyInput.value = recipient
+    })
+} 
+</script>
+
+<!-- JAVASCRIPT FILES -->
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.sticky.js') }}"></script>
+<script src="{{ url_for('static', filename='js/click-scroll.js') }}"></script>
+<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
